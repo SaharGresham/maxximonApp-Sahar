@@ -1,0 +1,171 @@
+:root {
+  --main-bg-color: #56F6DA;
+  --main-page-color: #6ED8C2;
+  --main-form-color: #32425C;
+  
+}
+
+.container {
+  padding-top: 4em;
+  background-color: var(--main-form-color);
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-image {
+  height: 7vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.page {
+  background-color: var(--main-page-color);
+}
+
+.navbar {
+  background-color: var(--main-bg-color);
+  /* position: fixed; */
+  /* top: 0; */
+}
+
+::placeholder {
+  color: lightgray !important;
+}
+
+.form-control {
+  background-color: var(--main-form-color) !important;
+  color: white !important;
+}
+.form-control:focus {
+  border-color: var(--main-page-color) !important;
+}
+
+.borderColor {
+  border: solid 1px;
+  border-color: darkgray !important;
+  border-radius: 0.25em;
+  margin-bottom: 1em;
+  padding: 0.5em 0.75em 0em 0.75em;
+}
+
+.borderColorRed {
+  border-color: #f13d56 !important;
+
+}
+
+.green {
+  border-color: var(--main-bg-color) !important;
+}
+
+.reasonText {
+  padding: 0.5em 1em;
+}
+
+.textDG {
+  color: lightgray
+}
+
+.btnWrap {
+  text-align: center;
+}
+
+.submitBtn {
+  background-color: #20D4B9;
+  border: none;
+  color: lightgray;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+.submitBtn:hover {
+  background-color:#61dafb;
+}
+
+.navText {
+  text-align: center;
+  width: 90%;
+}
+
+.component1 {
+  width: 20%;
+  float: left;
+  margin: 2px;
+ 
+}
+
+.component2 {
+  width: 30%;
+  float: left;
+  margin: 5px;
+}
+
+@media (max-width: 500px) {
+  .navText {
+    display: none;
+  }
+}
+
+.json-to-table tr:nth-child(even) {
+  
+  color: #495057;
+
+}
+
+.table {
+  overflow-x: auto;
+  width: fit-content;
+}
+
+.popUp {
+  /* position: absolute; */
+  bottom: 0;
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  /* border: 1px solid black; */
+  width: 50%;
+  margin: auto;
+  padding: 2em 0;
+  text-align: center;
+  background-color: #4085F1;
+  border-radius: 0.25em;
+}
+
+.hidden {
+  display: none;
+}
