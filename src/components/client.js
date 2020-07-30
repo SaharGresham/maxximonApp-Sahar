@@ -6,6 +6,7 @@ import Phone from './phone.js';
 import Email from './email.js';
 import Name from './name.js';
 import Submit from './submit.js';
+import Login from './login.js';
 
 
 class Client extends React.Component {
@@ -13,12 +14,20 @@ class Client extends React.Component {
         super(props);
         this.state = {
             display: "", //Email, Date, Name, Phone_Number
-            displayQuery: ""
+            displayQuery: "",
+            admin: false
         }
     }
     changeDisplay = (display) => {
         this.setState({
             "display": display
+        });
+    }
+
+    changePage = () => {
+        console.log("changePage")
+        this.setState({
+            "admin": true
         });
     }
     // changeDisplayQuery = (query) => {
@@ -29,70 +38,83 @@ class Client extends React.Component {
     // }
 
     render() {
+        let clientpage = <div className="page" id="home">
 
+            <Container>
+                <h4>Client Query</h4><br />
+                <Button variant="primary" onClick={() => this.changeDisplay("Date")}>Date</Button>{' '}
+                <Button variant="primary" onClick={() => this.changeDisplay("Email")}>Email</Button>{' '}
+                <Button variant="primary" onClick={() => this.changeDisplay("Phone_Number")}>Phone</Button>{' '}
+                <Button variant="primary" onClick={() => this.changeDisplay("Name")}>Name</Button>{' '}
+                <Button variant="primary" onClick={() => this.changeDisplay("All_Data")}>All Data</Button>{' '}<br />
+                {this.state.display === "Date" &&
+                    <div>
+                        <DateDisplay />
+                        <Submit
+                            displayState={this.state.display}
+
+                        />
+                    </div>
+                }
+                {this.state.display === "Email" &&
+                    <div>
+                        <Email />
+                        <Submit
+                            displayState={this.state.display}
+
+                        />
+                    </div>
+                }
+                {this.state.display === "Phone_Number" &&
+                    <div>
+                        <Phone />
+                        <Submit
+                            displayState={this.state.display}
+                        // displayQuery={this.changeDisplayQuery}
+                        />
+                    </div>
+                }
+                {this.state.display === "Name" &&
+                    <div>
+                        <Name />
+                        <Submit
+                            displayState={this.state.display}
+                        // displayQuery={this.changeDisplayQuery}
+                        />
+                    </div>
+                }
+
+                {this.state.display === "All_Data" &&
+                    <div>
+                        <p>Press submit to retrieve all data from database</p>
+                        <Submit
+                            displayState={this.state.display}
+                        // displayQuery={this.changeDisplayQuery}
+                        />
+                    </div>
+                }
+
+                <br />
+
+            </Container>
+
+        </div>
+        if (this.state.admin === true) {
+            clientpage = <Login />
+        }
         return (
             <div>
-                <div className="page" id="home">
-
-                    <Container>
-                        <h4>Client Query</h4><br/>
-                        <Button variant="primary" onClick={() => this.changeDisplay("Date")}>Date</Button>{' '}
-                        <Button variant="primary" onClick={() => this.changeDisplay("Email")}>Email</Button>{' '}
-                        <Button variant="primary" onClick={() => this.changeDisplay("Phone_Number")}>Phone</Button>{' '}
-                        <Button variant="primary" onClick={() => this.changeDisplay("Name")}>Name</Button>{' '}
-                        <Button variant="primary" onClick={() => this.changeDisplay("All_Data")}>All Data</Button>{' '}<br />
-                        {this.state.display === "Date" &&
-                            <div>
-                                <DateDisplay />
-                                <Submit
-                                    displayState={this.state.display}
-                                   
-                                />
-                            </div>
-                        }
-                        {this.state.display === "Email" &&
-                            <div>
-                                <Email />
-                                <Submit
-                                    displayState={this.state.display}
-                                   
-                                />
-                            </div>
-                        }
-                        {this.state.display === "Phone_Number" &&
-                            <div>
-                                <Phone />
-                                <Submit
-                                    displayState={this.state.display}
-                                    // displayQuery={this.changeDisplayQuery}
-                                />
-                        </div>
-                        }
-                        {this.state.display === "Name" &&
-                            <div>
-                                <Name />
-                                <Submit
-                                    displayState={this.state.display}
-                                    // displayQuery={this.changeDisplayQuery}
-                                />
-                            </div>
-                        }
-                       
-                        {this.state.display === "All_Data" &&
-                            <div>
-                                <p>Press submit to retrieve all data from database</p>
-                                <Submit
-                                    displayState={this.state.display}
-                                    // displayQuery={this.changeDisplayQuery}
-                                />
-                            </div>
-                        }
-                       
-                        <br />
-
-                    </Container>
-
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            where is the div?
+                <div>
+                Hello from Button
+                    <button onClick={() => this.changePage()}>Admin </button>
                 </div>
+                {clientpage}
             </div>
         )
     }

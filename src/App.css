@@ -27,8 +27,11 @@
 }
 
 .App-image {
-  height: 7vmin;
-  pointer-events: none;
+  text-align: center;
+  margin-left:40%;
+  height: 5vmin;
+  max-height: 5vmin;
+  min-height: 5vmin;
 }
 
 .App-header {
@@ -118,8 +121,8 @@
 }
 
 .navText {
-  text-align: center;
-  width: 90%;
+  text-align:right;
+  width: 100%;
 }
 
 .component1 {
@@ -131,12 +134,15 @@
 
 .component2 {
   width: 30%;
-  float: left;
+  float: right;
   margin: 5px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 760px) {
   .navText {
+    display: none;
+  }
+  .App-image {
     display: none;
   }
 }

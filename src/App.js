@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import aztec from './aztec-calendar.svg';
 import evolveU from './EvolveU+Final.jpg'
 import evolveU1 from './EvolveU-logo-white.png'
+import evolveU2 from './EvolveU-Favicon.png'
 
 class App extends React.Component {
   constructor(props) {
@@ -22,23 +23,19 @@ class App extends React.Component {
   render() {
     return (
       <div className="Container">
-      
+        
         <Navbar fixed="top" >
-          <div className="navText">
-            <div className="component1">
-              <Navbar.Brand href="#home" >Maximón</Navbar.Brand>
-            </div>
-            <div className="component1">
-              <img src={aztec} className="App-logo" alt="logo" />
-            </div>
-            <div className="component2"> 
+          
+            
+              <Navbar.Brand href="#home">Maximón</Navbar.Brand>
+              <img src={evolveU2} className="App-image" />
+              <div className="navText"> 
               protecting health through contact tracing
-            </div>
-            <div className="component1">
-              <img src={evolveU1} className="App-image" />
-            </div>
+             
+            
           </div>
 
+          
         </Navbar>
         {this.state.isCustomer === true &&
           <div>
